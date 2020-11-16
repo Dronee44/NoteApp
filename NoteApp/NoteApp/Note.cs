@@ -8,7 +8,7 @@ namespace NoteApp
     /// <summary>
     /// Класс заметки, хранящий информацию о заголовке, категории, тексте и времени создания и изменении
     /// </summary>
-    public class Note /*: ICloneable*/
+    public class Note : ICloneable
     {
     
         private string _name;
@@ -89,13 +89,13 @@ namespace NoteApp
         {
         }
 
-        //public object Clone()
-        //{
-        //    return new Note(this.Name, this.Category, this.Text, this.CreatingTime)
-        //    {
-        //        LastChangeTime = this.LastChangeTime
-        //    };
-        //}
+        public object Clone()
+        {
+            return new Note(this.Name, this.Category, this.Text, this.CreatingTime)
+            {
+                LastChangeTime = this.LastChangeTime
+            };
+        }
 
     }
 }
