@@ -6,12 +6,12 @@ using System.Text;
 
 namespace NoteApp
 {
-        public class ProjectManager
+    class ProjectManager
     {
         /// <summary>
         /// константа содержащая путь
         /// </summary>
-        private static string _path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\NoteApp.json"; 
+        private static string _path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + @"\NoteApp.notes"; 
         public static void SaveToFile(Project data, string file)
         {
             JsonSerializer serializer = new JsonSerializer
