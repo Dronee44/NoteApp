@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using System.Windows.Forms;
 
 namespace NoteApp
 {
@@ -20,14 +18,6 @@ namespace NoteApp
 
             Console.WriteLine(note.Name +" "+ note.Text + " " + note.Category);
             Console.WriteLine(note2.Name + " " + note2.Text+" " + note2.Category);
-            
-            Project prj = new Project();
-            prj.NoteList.Add(note);
-            prj.NoteList.Add(note2);
-            ProjectManager.SaveToFile(prj);
-            ProjectManager.LoadFromFile();
-            Console.WriteLine(ProjectManager.LoadFromFile("NoteApp.json"));
-            
             
 
 
