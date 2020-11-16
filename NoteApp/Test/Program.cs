@@ -18,7 +18,7 @@ namespace NoteApp
 
             Console.WriteLine(note.Name +" "+ note.Text + " " + note.Category);
             Console.WriteLine(note2.Name + " " + note2.Text+" " + note2.Category);
-            Console.WriteLine("vse rabotaet");
+            
 
 
 
