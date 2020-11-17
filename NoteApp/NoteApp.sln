@@ -7,9 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoteAppUI", "NoteAppUI\Note
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoteApp", "NoteApp\NoteApp.csproj", "{DB9E2A21-5156-4874-9909-29B53CB0F335}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Отчеты", "Отчеты", "{50CD6BAC-DCC3-47A0-ACC5-194E0D558517}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{F4D2DAE8-08E0-4C6F-A934-D9DD8F09C5D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test\Test.csproj", "{F4D2DAE8-08E0-4C6F-A934-D9DD8F09C5D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.CompilerServices;
+using System;
 using System.Runtime.CompilerServices;
 
 namespace NoteApp
@@ -16,8 +17,16 @@ namespace NoteApp
             note2.Text = "vaaaaaaaaaaau";
             note2.Category = NoteCategory.Work;
 
-            Console.WriteLine(note.Name +" "+ note.Text + " " + note.Category);
-            Console.WriteLine(note2.Name + " " + note2.Text+" " + note2.Category);
+            Console.WriteLine(note.Name + " " + note.Text + " " + note.Category);
+            Console.WriteLine(note2.Name + " " + note2.Text + " " + note2.Category);
+            Project prj= new Project();
+            Project prj2 = new Project();
+            prj.NoteList.Add(note);
+            ProjectManager.SaveToFile(prj);
+            Console.WriteLine(prj);
+            prj = null;
+            prj = ProjectManager.LoadFromFile("NoteApp.txt");
+            Console.WriteLine(prj);
             
 
 
