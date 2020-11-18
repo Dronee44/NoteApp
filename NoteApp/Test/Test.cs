@@ -4,30 +4,27 @@ using System.Runtime.CompilerServices;
 
 namespace NoteApp
 {
-    class Program
+    class Test
     {
         static void Main(string[] args)
         {
-            Note note = new Note();
-            note.Name = "pupa";
-            note.Text = "afiget";
-            note.Category = NoteCategory.HealthAndSport;
-            Note note2 = new Note();
-            note2.Name = "lupa";
-            note2.Text = "vaaaaaaaaaaau";
-            note2.Category = NoteCategory.Work;
+            Note note = new Note("",NoteCategory.Work,"Vse rabotaet");
+            Note note2 = new Note("Zametka 2", NoteCategory.Peoples, "Opat vse rabotaet");
 
             Console.WriteLine(note.Name + " " + note.Text + " " + note.Category);
             Console.WriteLine(note2.Name + " " + note2.Text + " " + note2.Category);
+
             Project prj= new Project();
             Project prj2 = new Project();
             prj.NoteList.Add(note);
+            prj.NoteList.Add(note2);
             ProjectManager.SaveToFile(prj);
-            Console.WriteLine(prj);
-            prj = null;
-            prj = ProjectManager.LoadFromFile("NoteApp.txt");
-            Console.WriteLine(prj);
-            
+            //prj = null;
+            //prj = ProjectManager.LoadFromFile("NoteApp.txt");
+            Note note3 = new Note("keka", NoteCategory.Finance, "Normas Zakladka");
+            Console.WriteLine(note3.CreatingTime);
+            Console.WriteLine(note.Name + note.Text);
+             
 
 
 
