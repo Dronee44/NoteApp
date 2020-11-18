@@ -59,10 +59,11 @@ namespace NoteApp
         /// <summary>
         /// Возвращает и задает время создания заметки
         /// </summary>
+
         public DateTime CreatingTime
         {
             get { return _creatingTime; }
-           private set { _creatingTime = value; }
+            private set { _creatingTime = value; }
         }
 
         /// <summary>
@@ -77,12 +78,12 @@ namespace NoteApp
         /// <summary>
         /// Создание заметки
         /// </summary>
-        public Note(string name, NoteCategory category, string text, DateTime creatingTime)
+        public Note(string name, NoteCategory category, string text)
         {
             Name = name;
             Category = category;
             Text = text;
-            CreatingTime = creatingTime;
+            CreatingTime = DateTime.Now;
         }
 
         public Note()
@@ -91,7 +92,7 @@ namespace NoteApp
 
         public object Clone()
         {
-            return new Note(this.Name, this.Category, this.Text, this.CreatingTime)
+            return new Note(this.Name, this.Category, this.Text)
             {
                 LastChangeTime = this.LastChangeTime
             };
