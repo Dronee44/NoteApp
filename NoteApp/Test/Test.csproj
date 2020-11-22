@@ -6,7 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NoteAppUI\NoteAppUI.csproj" />
     <ProjectReference Include="..\NoteApp\NoteApp.csproj" />
   </ItemGroup>
 
