@@ -198,11 +198,11 @@
             // 
             this.HeadingLabel.AutoSize = true;
             this.HeadingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.HeadingLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.HeadingLabel.Location = new System.Drawing.Point(0, 6);
             this.HeadingLabel.Name = "HeadingLabel";
-            this.HeadingLabel.Size = new System.Drawing.Size(223, 36);
+            this.HeadingLabel.Size = new System.Drawing.Size(0, 36);
             this.HeadingLabel.TabIndex = 7;
-            this.HeadingLabel.Text = "ccccccccccccc";
             // 
             // NoteTextBox
             // 
@@ -276,7 +276,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(880, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(880, 30);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 

@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -32,16 +33,6 @@ namespace NoteAppUI
             NoteTextBox.ReadOnly = true;//только для чтения
             AllNotes = ProjectManager.LoadFromFile("NoteApp.json");
             NotesList.DataSource = AllNotes.NoteList;
-
-            if (AllNotes.NoteList.Count != 0) ;
-            //LastNote();
-            //AllNotes = ProjectManager.LoadFromFile("NoteApp.json");
-            //NotesList.Items.Add(AllNotes = ProjectManager.LoadFromFile("NoteApp.json"));
-            //LastNote();
-            //AllNotes.NoteList.Add(ProjectManager.LoadFromFile("NoteApp.json"))
-            //NotesList.Items.Add(ProjectManager.LoadFromFile("NoteApp.json"));
-            //NotesList.Items.Add(AllNotes); // надо придумать как отобразить на листе загруженный список
-            //var q = NotesList.Items.Count;
         }
 
         private void NotesList_SelectedIndexChanged(object sender, EventArgs e)
@@ -50,39 +41,26 @@ namespace NoteAppUI
             {
                 return;
             }
-            //sortNotes = AllNotes.SortWithSelectionCategory(CategoryComboBox.SelectedIndex);
-
-            //HeadingLabel.Text = sortNotes[NotesList.SelectedIndex].Name;// вывод всех данных на форму
-            //SelectedCategoryLabel.Text = Convert.ToString((NoteCategory)sortNotes[NotesList.SelectedIndex].Category);
-            //NoteTextBox.Text = sortNotes[NotesList.SelectedIndex].Text;
-            //ModifiedDateTimePicker.Value = sortNotes[NotesList.SelectedIndex].LastChangeTime;
-            //CreationDateTimePicker.Value = sortNotes[NotesList.SelectedIndex].CreatingTime; 
-
             HeadingLabel.Text = AllNotes.NoteList[NotesList.SelectedIndex].Name;// вывод всех данных на форму
             SelectedCategoryLabel.Text = Convert.ToString((NoteCategory)AllNotes.NoteList[NotesList.SelectedIndex].Category);
             NoteTextBox.Text = AllNotes.NoteList[NotesList.SelectedIndex].Text;
             ModifiedDateTimePicker.Value = AllNotes.NoteList[NotesList.SelectedIndex].LastChangeTime;
             CreationDateTimePicker.Value = AllNotes.NoteList[NotesList.SelectedIndex].CreatingTime;
+            CorrectNameLenght();
 
 
         }
 
         private void CategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //for (int i = 0; i < AllNotes.NoteList.Count; i++)
-            //{
-            //    if ((NoteCategory)CategoryComboBox.SelectedItem == AllNotes.NoteList[i].Category)
-            //    {
-            //        sortNotes[i] = AllNotes.NoteList[i];
-            //        NotesList.Items.Add(sortNotes);
-            //    }
-            //}
+
         }
 
         private void CreateButton_Click(object sender, EventArgs e)
         {
             Note newNote = new Note() { LastChangeTime=DateTime.Now};
             EditNote noteForm = new EditNote(newNote);
+            
             var result = noteForm.ShowDialog();
             var realIndex = NotesList.SelectedIndex;
             if (result == DialogResult.OK)
@@ -182,5 +160,18 @@ namespace NoteAppUI
             ModifiedDateTimePicker.Value = AllNotes.NoteList.Last().LastChangeTime;
             CreationDateTimePicker.Value = AllNotes.NoteList.Last().CreatingTime;
         }
+        private void CorrectNameLenght()//2 уровень проверки правильности ввода
+        {
+            for(int i =0;i<AllNotes.NoteList.Count;i++)
+            {
+                if(AllNotes.NoteList[i].Name.Length>50)
+                {
+                    HeadingLabel.ForeColor = Color.Red;
+                }
+                else
+                    HeadingLabel.ForeColor = Color.Black;
+            }
+        }
+       
     }
 }

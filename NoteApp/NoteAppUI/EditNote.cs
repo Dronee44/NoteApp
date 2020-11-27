@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace NoteAppUI
@@ -39,6 +40,13 @@ namespace NoteAppUI
         private void OkButton_Click(object sender, EventArgs e)
         {
             _note.Name = HeadingTextBox.Text;
+            if(Regex.IsMatch(_note.Name, @"[^\w\.@-]"))//проверка спец символы
+            {
+                HeadingTextBox.ForeColor = Color.Red;
+                return;
+            }
+            else
+                HeadingTextBox.ForeColor = Color.Black;
             _note.Text = NoteText.Text;
             _note.Category = (NoteCategory)CategoryComboBox.SelectedItem;
             _note.LastChangeTime = ModifyingDateTimePicker2.Value;
@@ -52,5 +60,12 @@ namespace NoteAppUI
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
+        //private void CorrectNameInput(string text)
+        //{
+        //    Regex regex = new Regex(text);
+        //    if (Regex.IsMatch(text, @"[^\w\.@-]")
+        //        text = "qqqqqqqqqqqq";
+
+        //}
     }
 }
