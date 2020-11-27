@@ -60,12 +60,6 @@ namespace NoteAppUI
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
-        //private void CorrectNameInput(string text)
-        //{
-        //    Regex regex = new Regex(text);
-        //    if (Regex.IsMatch(text, @"[^\w\.@-]")
-        //        text = "qqqqqqqqqqqq";
 
-        //}
     }
 }
