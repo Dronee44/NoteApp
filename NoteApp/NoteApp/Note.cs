@@ -62,8 +62,8 @@ namespace NoteApp
 
         public DateTime CreatingTime
         {
-            get { return _creatingTime; }
-            private set { _creatingTime = value; }
+            get { return DateTime.Now; }
+            private set { _creatingTime = DateTime.Now; }
         }
 
         /// <summary>

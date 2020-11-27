@@ -13,7 +13,7 @@ namespace NoteApp
         /// <summary>
         /// константа содержащая путь
         /// </summary>
-        private static string _path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)+@"\NoteApp.json";  /*Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + @"\source\repos\Dronee44\NoteApp\NoteApp\Test\bin\Debug\netcoreapp3.1\NoteApp.json"; */
+        private static string _path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)+@"\NoteApp.json";
         public static void SaveToFile(Project data, string file)
         {
             JsonSerializer serializer = new JsonSerializer
