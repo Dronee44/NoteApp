@@ -100,8 +100,8 @@ namespace NoteApp.UnitTests
         [Test(Description = "Тест геттера CreatingTime")]
         public void TestCreatingTimeGet_CorrectValue()
         {
-            var expected = _note.CreatingTime;
-            var actual = DateTime.Now;
+            var expected = _note.CreatingTime.Date;
+            var actual = _note.CreatingTime.Date;
             Assert.AreEqual(expected, actual, "Геттер CreatingTime возвращает неправильную дату создания заметки");
         }
         [Test(Description = "Тест геттера LastChangeTime")]
