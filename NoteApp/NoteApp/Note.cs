@@ -26,13 +26,13 @@ namespace NoteApp
             set
             {
                 _name = value;
-                if (value.Length == 0)
+                if (_name.Length == 0)
                 {
                     _name = "NoName";
                     return;
                 }
 
-                if (value.Length>50)
+                if (_name.Length>50)
                 {
                     throw new ArgumentException("Длинна названия не может превышать 50 символов");
                 }

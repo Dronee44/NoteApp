@@ -48,7 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NoteCategoryTest.cs" />
     <Compile Include="NoteTest.cs" />
     <Compile Include="ProjectManagerTest.cs" />
     <Compile Include="ProjectTest.cs" />
@@ -56,6 +55,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NoteAppUI\NoteAppUI.csproj">
+      <Project>{1d92a3eb-49c9-42f6-8002-075495660438}</Project>
+      <Name>NoteAppUI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NoteApp\NoteApp.csproj">
+      <Project>{db9e2a21-5156-4874-9909-29b53cb0f335}</Project>
+      <Name>NoteApp</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
