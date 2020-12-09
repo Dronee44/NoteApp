@@ -98,5 +98,10 @@ namespace NoteApp
             };
         }
 
+        public override string ToString()
+        {
+            return Name;
+        }
+
     }
 }

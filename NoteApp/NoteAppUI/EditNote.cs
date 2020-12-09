@@ -40,13 +40,13 @@ namespace NoteAppUI
         private void OkButton_Click(object sender, EventArgs e)
         {
             _note.Name = HeadingTextBox.Text;
-            if(Regex.IsMatch(_note.Name, @"[^\w\.@-]"))//проверка спец символы
+            if(Regex.IsMatch(_note.Name, @"[^\w\040\.@-]"))//проверка на спец символы
             {
                 HeadingTextBox.ForeColor = Color.Red;
                 return;
             }
             else
-                HeadingTextBox.ForeColor = Color.Black;
+            HeadingTextBox.ForeColor = Color.Black;
             _note.Text = NoteText.Text;
             _note.Category = (NoteCategory)CategoryComboBox.SelectedItem;
             _note.LastChangeTime = ModifyingDateTimePicker2.Value;

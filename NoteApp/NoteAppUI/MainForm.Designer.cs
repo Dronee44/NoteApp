@@ -35,7 +35,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.CreateButton = new System.Windows.Forms.Button();
             this.NotesList = new System.Windows.Forms.ListBox();
-            this.noteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DeleteButton = new System.Windows.Forms.Button();
             this.ChangeButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -56,14 +55,15 @@
             this.deleteNoteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.noteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.noteBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.noteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -125,9 +125,9 @@
             this.CreateButton.BackgroundImage = global::NoteAppUI.Properties.Resources.Create1;
             this.CreateButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.CreateButton.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.CreateButton.Location = new System.Drawing.Point(3, 413);
+            this.CreateButton.Location = new System.Drawing.Point(3, 394);
             this.CreateButton.Name = "CreateButton";
-            this.CreateButton.Size = new System.Drawing.Size(49, 35);
+            this.CreateButton.Size = new System.Drawing.Size(87, 54);
             this.CreateButton.TabIndex = 3;
             this.CreateButton.UseVisualStyleBackColor = true;
             this.CreateButton.Click += new System.EventHandler(this.CreateButton_Click);
@@ -137,8 +137,6 @@
             this.NotesList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.NotesList.DataSource = this.noteBindingSource;
-            this.NotesList.DisplayMember = "Name";
             this.NotesList.FormattingEnabled = true;
             this.NotesList.ItemHeight = 16;
             this.NotesList.Location = new System.Drawing.Point(3, 3);
@@ -146,10 +144,7 @@
             this.NotesList.Size = new System.Drawing.Size(272, 388);
             this.NotesList.TabIndex = 0;
             this.NotesList.SelectedIndexChanged += new System.EventHandler(this.NotesList_SelectedIndexChanged);
-            // 
-            // noteBindingSource
-            // 
-            this.noteBindingSource.DataSource = typeof(NoteApp.Note);
+            this.NotesList.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NotesList_KeyDown);
             // 
             // DeleteButton
             // 
@@ -157,9 +152,9 @@
             this.DeleteButton.BackColor = System.Drawing.SystemColors.Control;
             this.DeleteButton.BackgroundImage = global::NoteAppUI.Properties.Resources.Delete;
             this.DeleteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.DeleteButton.Location = new System.Drawing.Point(110, 413);
+            this.DeleteButton.Location = new System.Drawing.Point(188, 391);
             this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(46, 35);
+            this.DeleteButton.Size = new System.Drawing.Size(87, 57);
             this.DeleteButton.TabIndex = 5;
             this.DeleteButton.UseVisualStyleBackColor = false;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
@@ -169,9 +164,9 @@
             this.ChangeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.ChangeButton.BackgroundImage = global::NoteAppUI.Properties.Resources.Change1;
             this.ChangeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ChangeButton.Location = new System.Drawing.Point(58, 413);
+            this.ChangeButton.Location = new System.Drawing.Point(96, 391);
             this.ChangeButton.Name = "ChangeButton";
-            this.ChangeButton.Size = new System.Drawing.Size(46, 35);
+            this.ChangeButton.Size = new System.Drawing.Size(87, 57);
             this.ChangeButton.TabIndex = 4;
             this.ChangeButton.UseVisualStyleBackColor = true;
             this.ChangeButton.Click += new System.EventHandler(this.ChangeButton_Click);
@@ -276,7 +271,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(880, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(880, 28);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -341,6 +336,10 @@
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
+            // noteBindingSource
+            // 
+            this.noteBindingSource.DataSource = typeof(NoteApp.Note);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -358,11 +357,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.noteBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.noteBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
